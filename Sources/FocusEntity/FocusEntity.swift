@@ -5,8 +5,7 @@
 //  Created by Max Cobb on 8/26/19.
 //
 
-#if os(iOS)
-
+#if !targetEnvironment(simulator)
 import RealityKit
 import ARKit
 import SmartHitTest
