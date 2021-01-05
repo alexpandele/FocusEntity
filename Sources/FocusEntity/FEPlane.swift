@@ -5,6 +5,7 @@
 //  Created by Max Cobb on 8/26/19.
 //
 
+#if !os(iOS)
 import ARKit
 import RealityKit
 import QuartzCore
@@ -88,3 +89,4 @@ public class FEPlane: FocusEntity {
     return fillEntity
   }()
 }
+#endif

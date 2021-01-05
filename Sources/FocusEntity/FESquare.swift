@@ -5,6 +5,7 @@
 //  Created by Max Cobb on 8/28/19.
 //
 
+#if !os(iOS)
 import ARKit
 import RealityKit
 
@@ -223,3 +224,4 @@ private func flashAnimation(duration: TimeInterval) -> SCNAction {
   }
   return action
 }
+#endif

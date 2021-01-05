@@ -5,6 +5,7 @@
 //  Created by Max Cobb on 8/28/19.
 //
 
+#if !os(iOS)
 import RealityKit
 import UIKit
 
@@ -157,3 +158,4 @@ internal extension FESquare {
 
   }
 }
+#endif

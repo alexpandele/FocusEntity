@@ -5,6 +5,7 @@
 //  Created by Max Cobb on 8/26/19.
 //
 
+#if !os(iOS)
 import RealityKit
 import ARKit
 import SmartHitTest
@@ -405,3 +406,4 @@ open class FocusEntity: Entity {
     }
   }
 }
+#endif

@@ -5,6 +5,7 @@
 //  Created by Max Cobb on 8/26/19.
 //
 
+#if !os(iOS)
 import simd
 
 internal extension float4x4 {
@@ -29,3 +30,4 @@ internal extension float4x4 {
     return simd_quaternion(self)
   }
 }
+#endif
