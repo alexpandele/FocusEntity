@@ -48,13 +48,19 @@ public class FESquare: FocusEntity {
   private var isOpen = true
 
   /// List of the segments in the focus square.
-  private var segments: [FESquare.Segment] = []
+  public var segments: [FESquare.Segment] = []
 
   // MARK: - Initialization
   public required init() {
     super.init()
 //    opacity = 0.0
 
+    self.addSegments()
+    // Always render focus square on top of other content.
+//    self.displayNodeHierarchyOnTop(true)
+  }
+
+  public func addSegments () {
     /*
     The focus square consists of eight segments as follows, which can be individually animated.
 
@@ -74,7 +80,7 @@ public class FESquare: FocusEntity {
     let s6 = Segment(name: "s6", corner: .bottomRight, alignment: .vertical)
     let s7 = Segment(name: "s7", corner: .bottomLeft, alignment: .horizontal)
     let s8 = Segment(name: "s8", corner: .bottomRight, alignment: .horizontal)
-    segments = [s1, s2, s3, s4, s5, s6, s7, s8]
+    self.segments = [s1, s2, s3, s4, s5, s6, s7, s8]
 
     let sl: Float = 0.5  // segment length
     let c: Float = FESquare.thickness / 2 // correction to align lines perfectly
@@ -87,15 +93,12 @@ public class FESquare: FocusEntity {
     s7.position += [-(sl / 2 - c), 0, sl - c]
     s8.position += [sl / 2 - c, 0, sl - c]
 
-    for segment in segments {
+    for segment in self.segments {
       self.positioningEntity.addChild(segment)
       segment.open()
     }
     self.positioningEntity.addChild(fillPlane)
     self.positioningEntity.scale = SIMD3<Float>(repeating: FESquare.size * FESquare.scaleForClosedSquare)
-
-    // Always render focus square on top of other content.
-//    self.displayNodeHierarchyOnTop(true)
   }
 
   required init?(coder aDecoder: NSCoder) {
