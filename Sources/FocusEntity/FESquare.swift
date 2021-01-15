@@ -25,10 +25,10 @@ public class FESquare: FocusEntity {
   // MARK: - Configuration Properties
 
   /// Original size of the focus square in meters.
-  public static let size: Float = 0.17
+  public static var size: Float = 0.17
 
   /// Thickness of the focus square lines in meters.
-  public static let thickness: Float = 0.018
+  public static var thickness: Float = 0.018
 
   /// Scale factor for the focus square when it is closed, w.r.t. the original size.
   static let scaleForClosedSquare: Float = 0.97
