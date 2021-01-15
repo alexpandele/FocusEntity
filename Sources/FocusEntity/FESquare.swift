@@ -25,10 +25,10 @@ public class FESquare: FocusEntity {
   // MARK: - Configuration Properties
 
   /// Original size of the focus square in meters.
-  static let size: Float = 0.17
+  public static let size: Float = 0.17
 
   /// Thickness of the focus square lines in meters.
-  static let thickness: Float = 0.018
+  public static let thickness: Float = 0.018
 
   /// Scale factor for the focus square when it is closed, w.r.t. the original size.
   static let scaleForClosedSquare: Float = 0.97
@@ -39,10 +39,10 @@ public class FESquare: FocusEntity {
   /// Duration of the open/close animation
   static let animationDuration = 0.7
 
-  static var primaryColor = #colorLiteral(red: 1, green: 0.8, blue: 0, alpha: 1)
+  public static var primaryColor = #colorLiteral(red: 1, green: 0.8, blue: 0, alpha: 1)
 
   /// Color of the focus square fill.
-  static var fillColor = #colorLiteral(red: 1, green: 0.9254901961, blue: 0.4117647059, alpha: 1)
+  public static var fillColor = #colorLiteral(red: 1, green: 0.9254901961, blue: 0.4117647059, alpha: 1)
 
   /// Indicates whether the segments of the focus square are disconnected.
   private var isOpen = true
@@ -51,6 +51,13 @@ public class FESquare: FocusEntity {
   private var segments: [FESquare.Segment] = []
 
   // MARK: - Initialization
+  public static func setSize(size: Float) {
+    FESquare.size = size
+  }
+
+  public static func setPrimaryColor(red: Float, green: Float, blue: Float, alpha: Float) {
+    FESquare.fillColor = #colorLiteral(red: red, green: green, blue: blue, alpha: alpha)
+  }
 
   public required init() {
     super.init()
