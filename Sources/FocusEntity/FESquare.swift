@@ -48,7 +48,7 @@ public class FESquare: FocusEntity {
   private var isOpen = true
 
   /// List of the segments in the focus square.
-  public var segments: [FESquare.Segment] = []
+  private var segments: [FESquare.Segment] = []
 
   // MARK: - Initialization
   public required init() {
@@ -103,6 +103,13 @@ public class FESquare: FocusEntity {
 
   required init?(coder aDecoder: NSCoder) {
     fatalError("\(#function) has not been implemented")
+  }
+
+  public func removeSegments () {
+    for segment in self.segments {
+      self.positioningEntity.removeChild(segment)
+    }
+    self.segments = []
   }
 
   // MARK: Animations
