@@ -51,14 +51,6 @@ public class FESquare: FocusEntity {
   private var segments: [FESquare.Segment] = []
 
   // MARK: - Initialization
-  public static func setSize(size: Float) {
-    FESquare.size = size
-  }
-
-  public static func setPrimaryColor(red: Float, green: Float, blue: Float, alpha: Float) {
-    FESquare.fillColor = #colorLiteral(red: red, green: green, blue: blue, alpha: alpha)
-  }
-
   public required init() {
     super.init()
 //    opacity = 0.0
