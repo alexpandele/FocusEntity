@@ -233,4 +233,8 @@ private func flashAnimation(duration: TimeInterval) -> SCNAction {
   }
   return action
 }
+#else
+public class FESquare {
+
+}
 #endif
